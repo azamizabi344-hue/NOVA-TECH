@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NOVA TECH admin dashboard - manage projects, services, team, messages and users.">
+  <title>Dashboard | NOVA TECH</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="dashboard">
+
+    <!-- ==================== SIDEBAR ==================== -->
+    <aside class="dashboard__sidebar">
+      <a href="index.html" class="sidebar__brand">
+        <span class="sidebar__brand-icon">N</span>
+        <span>NOVA<span>TECH</span></span>
+      </a>
+
+      <nav class="sidebar__nav">
+        <p class="sidebar__title">Menu</p>
+
+        <button class="sidebar__link active" data-panel="overview">
+          <span aria-hidden="true">&#128200;</span> Dashboard
+        </button>
+        <button class="sidebar__link" data-panel="projects">
+          <span aria-hidden="true">&#128194;</span> Projects
+        </button>
+        <button class="sidebar__link" data-panel="services">
+          <span aria-hidden="true">&#128736;</span> Services
+        </button>
+        <button class="sidebar__link" data-panel="team">
+          <span aria-hidden="true">&#128101;</span> Team
+        </button>
+        <button class="sidebar__link" data-panel="intents">
+          <span aria-hidden="true">&#129504;</span> Intents
+        </button>
+        <button class="sidebar__link" data-panel="messages">
+          <span aria-hidden="true">&#128172;</span> Messages
+        </button>
+        <button class="sidebar__link" data-panel="users">
+          <span aria-hidden="true">&#128100;</span> Users
+        </button>
+        <button class="sidebar__link" data-panel="settings">
+          <span aria-hidden="true">&#9881;</span> Settings
+        </button>
+
+        <p class="sidebar__title">Account</p>
+        <button class="sidebar__link sidebar__link--logout" id="sidebar-logout">
+          <span aria-hidden="true">&#8614;</span> Logout
+        </button>
+      </nav>
+    </aside>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="dashboard__main">
+
+      <!-- Topbar -->
+      <header class="dashboard__topbar">
+        <h1 class="topbar__title" id="topbar-title">Dashboard</h1>
+        <div class="topbar__user">
+          <span class="topbar__avatar" id="user-avatar">A</span>
+          <span id="user-email">admin@novatech.com</span>
+          <button class="btn btn--ghost btn--sm" id="topbar-logout">Logout</button>
+        </div>
+      </header>
+
+      <!-- ============ OVERVIEW PANEL ============ -->
+      <section class="panel active" id="panel-overview">
+        <div class="dash-cards">
+          <div class="dash-card">
+            <div class="dash-card__label">Total Projects</div>
+            <div class="dash-card__value" id="card-projects">0</div>
+            <div class="dash-card__trend">&#9650; +8 this year</div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card__label">Total Users</div>
+            <div class="dash-card__value" id="card-users">0</div>
+            <div class="dash-card__trend">&#9650; +120 this month</div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card__label">Messages</div>
+            <div class="dash-card__value" id="card-messages">0</div>
+            <div class="dash-card__trend">&#9650; 3 unread</div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card__label">Team Members</div>
+            <div class="dash-card__value" id="card-team">0</div>
+            <div class="dash-card__trend">&#9650; 2 new hires</div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card__label">Intents</div>
+            <div class="dash-card__value" id="card-intents">0</div>
+            <div class="dash-card__trend">&#9650; 6 active now</div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card__label">Revenue</div>
+            <div class="dash-card__value" id="card-revenue">$0</div>
+            <div class="dash-card__trend">&#9650; +18% vs last year</div>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <h2 class="panel-card__title">Recent Projects</h2>
+          <div class="dash-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Project</th>
+                  <th>Category</th>
+                  <th>Client</th>
+                  <th>Year</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="recent-projects-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <h2 class="panel-card__title">Recent Messages</h2>
+          <div class="message-list" id="recent-messages-list"></div>
+        </div>
+      </section>
+
+      <!-- ============ PROJECTS PANEL ============ -->
+      <section class="panel" id="panel-projects">
+        <div class="panel__header">
+          <div>
+            <h2 class="panel__title">Project Management</h2>
+            <p class="panel__sub">Add new projects or update their status.</p>
+          </div>
+        </div>
+
+        <!-- Add-project form -->
+        <div class="panel-card">
+          <h2 class="panel-card__title">Add New Project</h2>
+          <form class="project-form" id="add-project-form" novalidate>
+            <div class="form__group">
+              <label class="form__label" for="ap-name">Project Name</label>
+              <input type="text" class="form__input" id="ap-name" placeholder="Project name">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="ap-category">Category</label>
+              <select class="form__select" id="ap-category">
+                <option value="web">Web</option>
+                <option value="mobile">Mobile</option>
+                <option value="ai">AI</option>
+                <option value="security">Security</option>
+              </select>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="ap-client">Client</label>
+              <input type="text" class="form__input" id="ap-client" placeholder="Client name">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="ap-year">Year</label>
+              <input type="number" class="form__input" id="ap-year" placeholder="2026" min="2015" max="2030">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="ap-status">Status</label>
+              <select class="form__select" id="ap-status">
+                <option value="active">Active</option>
+                <option value="done">Done</option>
+                <option value="pending">Pending</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn--primary">Add Project</button>
+          </form>
+          <div class="dash-success" id="add-project-success">Project added successfully.</div>
+        </div>
+
+        <!-- Project list -->
+        <div class="panel-card">
+          <h2 class="panel-card__title">All Projects</h2>
+          <div class="dash-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Project</th>
+                  <th>Category</th>
+                  <th>Client</th>
+                  <th>Year</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="manage-projects-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SERVICES PANEL ============ -->
+      <section class="panel" id="panel-services">
+        <div class="panel__header">
+          <div>
+            <h2 class="panel__title">Services</h2>
+            <p class="panel__sub">An overview of what NOVA TECH offers.</p>
+          </div>
+        </div>
+        <div class="dash-services" id="dash-services-grid"></div>
+      </section>
+
+      <!-- ============ TEAM PANEL ============ -->
+      <section class="panel" id="panel-team">
+        <div class="panel__header">
+          <div>
+            <h2 class="panel__title">Team Members</h2>
+            <p class="panel__sub">Everyone working at NOVA TECH.</p>
+          </div>
+        </div>
+        <div class="dash-team" id="dash-team-grid"></div>
+      </section>
+
+      <!-- ============ INTENTS PANEL ============ -->
+      <section class="panel" id="panel-intents">
+        <div class="panel__header">
+          <div>
+            <h2 class="panel__title">Intents</h2>
+            <p class="panel__sub">Chatbot intents configured in the AI assistant.</p>
+          </div>
+        </div>
+        <div class="dash-intents" id="dash-intents-grid"></div>
+      </section>
+
+      <!-- ============ MESSAGES PANEL ============ -->
+      <section class="panel" id="panel-messages">
+        <div class="panel__header">
+          <div>
+            <h2 class="panel__title">Messages</h2>
+            <p class="panel__sub">Inquiries from the contact form (stored locally).</p>
+          </div>
+        </div>
+        <div class="message-list" id="messages-list"></div>
+      </section>
+
+      <!-- ============ USERS PANEL ============ -->
+      <section class="panel" id="panel-users">
+        <div class="panel__header">
+          <div>
+            <h2 class="panel__title">Users</h2>
+            <p class="panel__sub">Accounts registered in the system (demo data).</p>
+          </div>
+        </div>
+        <div class="panel-card">
+          <div class="dash-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="users-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SETTINGS PANEL ============ -->
+      <section class="panel" id="panel-settings">
+        <div class="panel__header">
+          <div>
+            <h2 class="panel__title">Settings</h2>
+            <p class="panel__sub">Update your profile preferences (demo only).</p>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <h2 class="panel-card__title">Profile</h2>
+          <form id="settings-form" class="project-form">
+            <div class="form__group">
+              <label class="form__label" for="set-name">Display Name</label>
+              <input type="text" class="form__input" id="set-name" placeholder="Your name">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="set-email">Email (read-only)</label>
+              <input type="email" class="form__input" id="set-email" readonly>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="set-role">Role (read-only)</label>
+              <input type="text" class="form__input" id="set-role" readonly>
+            </div>
+            <button type="submit" class="btn btn--primary">Save Settings</button>
+          </form>
+          <div class="dash-success" id="settings-success">Settings saved successfully.</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+/* ==========================================================================
+   NOVA TECH - Animations (animations.css)
+   Keyframes, reveals, transitions and motion effects
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. KEYFRAMES
+   -------------------------------------------------------------------------- */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Floating motion used for tech-visual cards */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+/* Fade-up used for scroll reveals */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gentle fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Hero title entrance */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Pulsing glow for hero core */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 40px rgba(108, 92, 231, 0.4); }
+  50% { box-shadow: 0 0 80px rgba(108, 92, 231, 0.7); }
+}
+
+/* --------------------------------------------------------------------------
+   2. HERO ENTRANCE ANIMATIONS
+   -------------------------------------------------------------------------- */
+.hero__badge { animation: fadeIn 0.8s ease 0.1s both; }
+.hero__title  { animation: slideInLeft 0.9s ease 0.2s both; }
+.hero__subtitle { animation: slideInLeft 0.9s ease 0.35s both; }
+.hero__buttons { animation: slideInLeft 0.9s ease 0.5s both; }
+.hero__stats { animation: fadeIn 1s ease 0.7s both; }
+.hero__visual { animation: fadeIn 1.2s ease 0.4s both; }
+
+.tech-visual__core {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* --------------------------------------------------------------------------
+   3. SCROLL REVEAL
+   Each element with class "reveal" starts hidden and animates in when
+   visible. The .revealed class is added by main.js via IntersectionObserver.
+   -------------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for grids */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* --------------------------------------------------------------------------
+   4. HOVER EFFECTS (transitions)
+   These complement the base transitions defined in style.css.
+   -------------------------------------------------------------------------- */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button shine sweep on hover */
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::after {
+  left: 120%;
+}
+
+/* --------------------------------------------------------------------------
+   5. CARD ENTRANCE (used when JS renders cards)
+   -------------------------------------------------------------------------- */
+.card-enter {
+  animation: fadeUp 0.5s ease both;
+}
+
+/* --------------------------------------------------------------------------
+   6. RESPECT REDUCED MOTION
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

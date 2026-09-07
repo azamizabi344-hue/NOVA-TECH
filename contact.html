@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact NOVA TECH - tell us about your project and get a response within 24 hours.">
+  <title>Contact Us | NOVA TECH</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==================== NAVBAR (shared) ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="NOVA TECH home">
+        <span class="navbar__logo-icon" aria-hidden="true">N</span>
+        <span class="navbar__logo-text">NOVA<span>TECH</span></span>
+      </a>
+
+      <nav class="navbar__menu" id="navbar-menu" aria-label="Main navigation">
+        <ul class="navbar__list">
+          <li><a href="index.html" class="navbar__link">Home</a></li>
+          <li><a href="about.html" class="navbar__link">About</a></li>
+          <li><a href="services.html" class="navbar__link">Services</a></li>
+          <li><a href="projects.html" class="navbar__link">Projects</a></li>
+          <li><a href="team.html" class="navbar__link">Team</a></li>
+          <li><a href="blog.html" class="navbar__link">Blog</a></li>
+          <li><a href="contact.html" class="navbar__link active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="login.html" class="btn btn--ghost btn--sm">Login</a>
+        <button class="navbar__toggle" id="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== PAGE HERO ==================== -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Contact Us</h1>
+      <p class="page-hero__desc">
+        Tell us about your project and we'll get back to you within one business
+        day.
+      </p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> / <span>Contact</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section class="contact-page section-pad">
+    <div class="container contact__grid">
+
+      <!-- Left: contact information -->
+      <div class="contact-info" aria-label="Contact information">
+        <div class="contact-info__card">
+          <div class="contact-info__icon" aria-hidden="true">&#128205;</div>
+          <div>
+            <h4>Visit Us</h4>
+            <p>123 Innovation Drive, Tech City, TC 12345</p>
+          </div>
+        </div>
+        <div class="contact-info__card">
+          <div class="contact-info__icon" aria-hidden="true">&#128222;</div>
+          <div>
+            <h4>Call Us</h4>
+            <p>+1 (555) 123-4567</p>
+          </div>
+        </div>
+        <div class="contact-info__card">
+          <div class="contact-info__icon" aria-hidden="true">&#9993;</div>
+          <div>
+            <h4>Email Us</h4>
+            <p>hello@novatech.com</p>
+          </div>
+        </div>
+        <div class="contact-info__card">
+          <div class="contact-info__icon" aria-hidden="true">&#9201;</div>
+          <div>
+            <h4>Working Hours</h4>
+            <p>Mon - Fri, 9:00 AM - 6:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: contact form -->
+      <div class="contact-form-wrap">
+        <h2 class="form__title">Send Us A Message</h2>
+
+        <!-- Success box (shown after valid submit) -->
+        <div class="form__success" id="contact-success" role="status">
+          Thank you! Your message has been received. We will reply within 24 hours.
+        </div>
+
+        <!-- novalidate: we handle validation ourselves in contact.js -->
+        <form id="contact-form" novalidate>
+          <div class="form__row">
+            <!-- Full name -->
+            <div class="form__group">
+              <label class="form__label" for="contact-name">Full Name <span class="form__required">*</span></label>
+              <input type="text" class="form__input" id="contact-name" name="name" placeholder="John Doe" autocomplete="name">
+              <p class="form__error"></p>
+            </div>
+
+            <!-- Email -->
+            <div class="form__group">
+              <label class="form__label" for="contact-email">Email Address <span class="form__required">*</span></label>
+              <input type="email" class="form__input" id="contact-email" name="email" placeholder="john@example.com" autocomplete="email">
+              <p class="form__error"></p>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <!-- Phone -->
+            <div class="form__group">
+              <label class="form__label" for="contact-phone">Phone Number</label>
+              <input type="tel" class="form__input" id="contact-phone" name="phone" placeholder="+1 555 123 4567" autocomplete="tel">
+              <p class="form__error"></p>
+            </div>
+
+            <!-- Service -->
+            <div class="form__group">
+              <label class="form__label" for="contact-service">Service Needed <span class="form__required">*</span></label>
+              <select class="form__select" id="contact-service" name="service">
+                <option value="">Select a service...</option>
+                <option value="web">Web Development</option>
+                <option value="mobile">Mobile Development</option>
+                <option value="ai">AI Solutions</option>
+                <option value="security">Cyber Security</option>
+                <option value="cloud">Cloud Computing</option>
+                <option value="design">UI/UX Design</option>
+                <option value="other">Other</option>
+              </select>
+              <p class="form__error"></p>
+            </div>
+          </div>
+
+          <!-- Subject -->
+          <div class="form__group">
+            <label class="form__label" for="contact-subject">Subject <span class="form__required">*</span></label>
+            <input type="text" class="form__input" id="contact-subject" name="subject" placeholder="Project inquiry">
+            <p class="form__error"></p>
+          </div>
+
+          <!-- Message -->
+          <div class="form__group">
+            <label class="form__label" for="contact-message">Message <span class="form__required">*</span></label>
+            <textarea class="form__textarea" id="contact-message" name="message" placeholder="Tell us about your project..."></textarea>
+            <p class="form__error"></p>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER (shared) ==================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col footer__col--brand">
+          <a href="index.html" class="navbar__logo footer__logo">
+            <span class="navbar__logo-icon" aria-hidden="true">N</span>
+            <span class="navbar__logo-text">NOVA<span>TECH</span></span>
+          </a>
+          <p class="footer__about">
+            NOVA TECH is a full-service technology company delivering web, mobile,
+            AI, security and cloud solutions to clients worldwide.
+          </p>
+          <div class="footer__social" aria-label="Social media links">
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="footer__social-link" aria-label="Twitter">t</a>
+            <a href="#" class="footer__social-link" aria-label="GitHub">gh</a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">ig</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__title">Company</h4>
+          <ul class="footer__links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__title">Services</h4>
+          <ul class="footer__links">
+            <li><a href="services.html">Web Development</a></li>
+            <li><a href="services.html">Mobile Apps</a></li>
+            <li><a href="services.html">AI Solutions</a></li>
+            <li><a href="services.html">Cyber Security</a></li>
+            <li><a href="services.html">Cloud Solutions</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__title">Contact</h4>
+          <ul class="footer__links footer__links--contact">
+            <li><span>123 Innovation Drive, Tech City, TC 12345</span></li>
+            <li><a href="tel:+15551234567">+1 (555) 123-4567</a></li>
+            <li><a href="mailto:hello@novatech.com">hello@novatech.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; <span id="footer-year"></span> NOVA TECH. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

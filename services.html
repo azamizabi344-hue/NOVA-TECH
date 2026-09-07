@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore NOVA TECH services: Web Development, Mobile Apps, AI, Cyber Security, Cloud and UI/UX Design.">
+  <title>Services | NOVA TECH</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==================== NAVBAR (shared) ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="NOVA TECH home">
+        <span class="navbar__logo-icon" aria-hidden="true">N</span>
+        <span class="navbar__logo-text">NOVA<span>TECH</span></span>
+      </a>
+
+      <nav class="navbar__menu" id="navbar-menu" aria-label="Main navigation">
+        <ul class="navbar__list">
+          <li><a href="index.html" class="navbar__link">Home</a></li>
+          <li><a href="about.html" class="navbar__link">About</a></li>
+          <li><a href="services.html" class="navbar__link active">Services</a></li>
+          <li><a href="projects.html" class="navbar__link">Projects</a></li>
+          <li><a href="team.html" class="navbar__link">Team</a></li>
+          <li><a href="blog.html" class="navbar__link">Blog</a></li>
+          <li><a href="contact.html" class="navbar__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="login.html" class="btn btn--ghost btn--sm">Login</a>
+        <button class="navbar__toggle" id="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== PAGE HERO ==================== -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Our Services</h1>
+      <p class="page-hero__desc">
+        From first wireframe to global launch — everything you need to build,
+        secure and scale modern digital products.
+      </p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> / <span>Services</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES (dynamic) ==================== -->
+  <section class="services-page section-pad">
+    <div class="container">
+      <!-- Toolbar: search + category filters -->
+      <div class="services-toolbar">
+        <input
+          type="text"
+          class="services-search"
+          id="service-search"
+          placeholder="Search services, e.g. AI..."
+          aria-label="Search services"
+        >
+        <div class="filter-bar" id="service-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="mobile">Mobile</button>
+          <button class="filter-btn" data-filter="ai">AI</button>
+          <button class="filter-btn" data-filter="security">Security</button>
+          <button class="filter-btn" data-filter="cloud">Cloud</button>
+          <button class="filter-btn" data-filter="design">Design</button>
+        </div>
+      </div>
+
+      <!-- Result count -->
+      <p class="services-count" id="service-count"></p>
+
+      <!-- Cards rendered by services.js -->
+      <div class="services-detail-grid" id="services-grid"></div>
+
+      <!-- Shown when no results match -->
+      <div class="services-empty" id="services-empty">
+        No services match your search. Try a different keyword.
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA STRIP ==================== -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2>Need A Custom Solution?</h2>
+      <p>Tell us about your project and we'll build the right plan for you.</p>
+      <a href="contact.html" class="btn btn--outline">Request A Quote</a>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER (shared) ==================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col footer__col--brand">
+          <a href="index.html" class="navbar__logo footer__logo">
+            <span class="navbar__logo-icon" aria-hidden="true">N</span>
+            <span class="navbar__logo-text">NOVA<span>TECH</span></span>
+          </a>
+          <p class="footer__about">
+            NOVA TECH is a full-service technology company delivering web, mobile,
+            AI, security and cloud solutions to clients worldwide.
+          </p>
+          <div class="footer__social" aria-label="Social media links">
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="footer__social-link" aria-label="Twitter">t</a>
+            <a href="#" class="footer__social-link" aria-label="GitHub">gh</a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">ig</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__title">Company</h4>
+          <ul class="footer__links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__title">Services</h4>
+          <ul class="footer__links">
+            <li><a href="services.html">Web Development</a></li>
+            <li><a href="services.html">Mobile Apps</a></li>
+            <li><a href="services.html">AI Solutions</a></li>
+            <li><a href="services.html">Cyber Security</a></li>
+            <li><a href="services.html">Cloud Solutions</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__title">Contact</h4>
+          <ul class="footer__links footer__links--contact">
+            <li><span>123 Innovation Drive, Tech City, TC 12345</span></li>
+            <li><a href="tel:+15551234567">+1 (555) 123-4567</a></li>
+            <li><a href="mailto:hello@novatech.com">hello@novatech.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; <span id="footer-year"></span> NOVA TECH. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/services.js"></script>
+</body>
+</html>

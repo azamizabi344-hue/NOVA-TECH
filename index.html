@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NOVA TECH - Web Development, Mobile Apps, AI, Cyber Security and Cloud Solutions.">
+  <meta name="author" content="NOVA TECH">
+  <title>NOVA TECH | Innovative Software Solutions</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ===================================================== -->
+  <!-- NAVBAR / HEADER                                        -->
+  <!-- ===================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <!-- Logo -->
+      <a href="index.html" class="navbar__logo" aria-label="NOVA TECH home">
+        <span class="navbar__logo-icon" aria-hidden="true">N</span>
+        <span class="navbar__logo-text">NOVA<span>TECH</span></span>
+      </a>
+
+      <!-- Desktop navigation links -->
+      <nav class="navbar__menu" id="navbar-menu" aria-label="Main navigation">
+        <ul class="navbar__list">
+          <li><a href="index.html" class="navbar__link active">Home</a></li>
+          <li><a href="about.html" class="navbar__link">About</a></li>
+          <li><a href="services.html" class="navbar__link">Services</a></li>
+          <li><a href="projects.html" class="navbar__link">Projects</a></li>
+          <li><a href="team.html" class="navbar__link">Team</a></li>
+          <li><a href="blog.html" class="navbar__link">Blog</a></li>
+          <li><a href="contact.html" class="navbar__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right side actions -->
+      <div class="navbar__actions">
+        <a href="login.html" class="btn btn--ghost btn--sm" id="navbar-login">Login</a>
+        <button class="navbar__toggle" id="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================== -->
+  <!-- HERO SECTION                                          -->
+  <!-- ===================================================== -->
+  <section class="hero" id="hero">
+    <div class="hero__background" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="hero__badge">✦ Trusted by 150+ companies worldwide</span>
+        <h1 class="hero__title">
+          Building the <span class="text-gradient">Future</span> of Technology
+        </h1>
+        <p class="hero__subtitle">
+          NOVA TECH designs and ships cutting-edge web platforms, mobile apps, AI
+          systems and secure cloud solutions that help your business grow faster
+          and smarter.
+        </p>
+        <div class="hero__buttons">
+          <a href="contact.html" class="btn btn--primary">Get Started</a>
+          <a href="projects.html" class="btn btn--outline">View Projects</a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <span class="hero__stat-number counter" data-target="150">0</span><span class="hero__stat-suffix">+</span>
+            <span class="hero__stat-label">Projects Delivered</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number counter" data-target="50">0</span><span class="hero__stat-suffix">+</span>
+            <span class="hero__stat-label">Team Members</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number counter" data-target="30">0</span><span class="hero__stat-suffix">+</span>
+            <span class="hero__stat-label">Countries Served</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technology visual -->
+      <div class="hero__visual" aria-hidden="true">
+        <div class="tech-visual">
+          <div class="tech-visual__grid"></div>
+          <div class="tech-visual__core">
+            <span class="tech-visual__icon">&#9883;</span>
+            <span class="tech-visual__icon tech-visual__icon--2">&#9670;</span>
+            <span class="tech-visual__icon tech-visual__icon--3">&#9679;</span>
+            <span class="tech-visual__icon tech-visual__icon--4">&#10022;</span>
+            <span class="tech-visual__ring tech-visual__ring--1"></span>
+            <span class="tech-visual__ring tech-visual__ring--2"></span>
+          </div>
+          <div class="tech-visual__card tech-visual__card--1">AI</div>
+          <div class="tech-visual__card tech-visual__card--2">WEB</div>
+          <div class="tech-visual__card tech-visual__card--3">CLOUD</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- COMPANY STATISTICS                                    -->
+  <!-- ===================================================== -->
+  <section class="stats section-pad" id="statistics">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat-card">
+          <span class="stat-card__number counter" data-target="150">0</span>
+          <span class="stat-card__suffix">+</span>
+          <h4 class="stat-card__label">Projects Completed</h4>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__number counter" data-target="50">0</span>
+          <span class="stat-card__suffix">+</span>
+          <h4 class="stat-card__label">Team Members</h4>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__number counter" data-target="30">0</span>
+          <span class="stat-card__suffix">+</span>
+          <h4 class="stat-card__label">Countries</h4>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__number counter" data-target="98">0</span>
+          <span class="stat-card__suffix">%</span>
+          <h4 class="stat-card__label">Client Satisfaction</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- SERVICES SECTION                                      -->
+  <!-- ===================================================== -->
+  <section class="services section-pad" id="services">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-head__tag">What We Do</span>
+        <h2 class="section-head__title">Our Services</h2>
+        <p class="section-head__desc">
+          End-to-end technology services designed to turn your ideas into reliable,
+          scalable and secure products.
+        </p>
+      </div>
+      <div class="services__grid" id="services-grid">
+        <!-- Web Development -->
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Web Development</h3>
+          <p class="service-card__desc">
+            Fast, responsive and SEO-friendly websites and web applications built
+            with modern, maintainable code.
+          </p>
+          <a href="services.html" class="service-card__link">Learn More &rarr;</a>
+        </article>
+
+        <!-- Mobile Development -->
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Mobile Development</h3>
+          <p class="service-card__desc">
+            Native and cross-platform mobile apps for iOS and Android with smooth,
+            delightful user experiences.
+          </p>
+          <a href="services.html" class="service-card__link">Learn More &rarr;</a>
+        </article>
+
+        <!-- AI Solutions -->
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a4 4 0 0 1 4 4 4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1-4-4 4 4 0 0 1 4-4 4 4 0 0 1 4-4z"></path>
+            </svg>
+          </div>
+          <h3 class="service-card__title">AI Solutions</h3>
+          <p class="service-card__desc">
+            Intelligent automation, machine learning models and data-driven insights
+            that power smarter decisions.
+          </p>
+          <a href="services.html" class="service-card__link">Learn More &rarr;</a>
+        </article>
+
+        <!-- Cyber Security -->
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Cyber Security</h3>
+          <p class="service-card__desc">
+            Proactive security audits, penetration testing and protection plans that
+            keep your data and systems safe.
+          </p>
+          <a href="services.html" class="service-card__link">Learn More &rarr;</a>
+        </article>
+
+        <!-- Cloud Computing -->
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Cloud Computing</h3>
+          <p class="service-card__desc">
+            Scalable cloud architecture, migration and DevOps that reduce cost and
+            boost performance.
+          </p>
+          <a href="services.html" class="service-card__link">Learn More &rarr;</a>
+        </article>
+
+        <!-- UI/UX Design -->
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="13.5" cy="6.5" r="2.5"></circle>
+              <circle cx="17.5" cy="10.5" r="2.5"></circle>
+              <circle cx="8.5" cy="7.5" r="2.5"></circle>
+              <circle cx="6.5" cy="12.5" r="2.5"></circle>
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+            </svg>
+          </div>
+          <h3 class="service-card__title">UI/UX Design</h3>
+          <p class="service-card__desc">
+            Human-centered interfaces and delightful experiences that users love and
+            that convert.
+          </p>
+          <a href="services.html" class="service-card__link">Learn More &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- FEATURED PROJECTS SECTION                             -->
+  <!-- ===================================================== -->
+  <section class="projects section-pad" id="projects">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-head__tag">Our Work</span>
+        <h2 class="section-head__title">Featured Projects</h2>
+        <p class="section-head__desc">
+          A selection of products we have designed and engineered for clients
+          around the world.
+        </p>
+      </div>
+
+      <!-- Filter buttons -->
+      <div class="filter-bar" id="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="ai">AI</button>
+        <button class="filter-btn" data-filter="security">Security</button>
+      </div>
+
+      <div class="projects__grid" id="featured-projects">
+        <!-- Project cards injected / populated here by projects.js -->
+      </div>
+
+      <div class="projects__more">
+        <a href="projects.html" class="btn btn--outline">View All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- ABOUT SECTION                                         -->
+  <!-- ===================================================== -->
+  <section class="about section-pad" id="about">
+    <div class="container about__inner">
+      <div class="about__visual" aria-hidden="true">
+        <div class="about__img-placeholder">
+          <span>About NOVA TECH</span>
+        </div>
+      </div>
+      <div class="about__content">
+        <span class="section-head__tag">Who We Are</span>
+        <h2 class="section-head__title">We Turn Big Ideas Into Working Products</h2>
+        <p class="about__story">
+          Founded in 2015, NOVA TECH has grown from a two-person studio into a
+          full-service technology company. We partner with startups and enterprises
+          to design, build and scale software that matters.
+        </p>
+        <div class="about__values">
+          <div class="about__value">
+            <h4>Our Mission</h4>
+            <p>Empower businesses with accessible, reliable and innovative technology.</p>
+          </div>
+          <div class="about__value">
+            <h4>Our Vision</h4>
+            <p>A world where every company can harness modern technology to solve real problems.</p>
+          </div>
+          <div class="about__value">
+            <h4>Why Choose Us</h4>
+            <p>Expert team, transparent process, on-time delivery and long-term support.</p>
+          </div>
+        </div>
+        <a href="about.html" class="btn btn--primary">More About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- TEAM SECTION                                          -->
+  <!-- ===================================================== -->
+  <section class="team section-pad" id="team">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-head__tag">Meet The Experts</span>
+        <h2 class="section-head__title">Talented Team Behind The Scenes</h2>
+        <p class="section-head__desc">
+          Our people are the heart of NOVA TECH — engineers, designers and
+          strategists who care about quality.
+        </p>
+      </div>
+      <div class="team__grid" id="featured-team">
+        <!-- Featured team cards populated by team.js -->
+      </div>
+      <div class="projects__more">
+        <a href="team.html" class="btn btn--outline">Meet The Whole Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- TESTIMONIALS SECTION                                  -->
+  <!-- ===================================================== -->
+  <section class="testimonials section-pad" id="testimonials">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-head__tag">Client Feedback</span>
+        <h2 class="section-head__title">What Our Clients Say</h2>
+      </div>
+      <div class="testimonials__grid">
+        <article class="testimonial-card">
+          <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+          </div>
+          <p class="testimonial-card__quote">
+            NOVA TECH rebuilt our entire e-commerce platform. Load times dropped by
+            60% and conversions jumped. Truly a world-class team.
+          </p>
+          <div class="testimonial-card__author">
+            <span class="testimonial-card__avatar">S</span>
+            <div>
+              <h4>Sarah Mitchell</h4>
+              <span>CEO, BrightCart</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+          </div>
+          <p class="testimonial-card__quote">
+            Their AI team delivered a recommendation engine that increased our
+            average order value by 30%. Excellent communication throughout.
+          </p>
+          <div class="testimonial-card__author">
+            <span class="testimonial-card__avatar">J</span>
+            <div>
+              <h4>James Okafor</h4>
+              <span>CTO, Finlytics</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>
+          </div>
+          <p class="testimonial-card__quote">
+            Professional, responsive and highly skilled. NOVA TECH secured our cloud
+            infrastructure and modernized our legacy systems without downtime.
+          </p>
+          <div class="testimonial-card__author">
+            <span class="testimonial-card__avatar">L</span>
+            <div>
+              <h4>Laura Chen</h4>
+              <span>Operations Director, MediTrust</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- PRICING SECTION                                       -->
+  <!-- ===================================================== -->
+  <section class="pricing section-pad" id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-head__tag">Pricing</span>
+        <h2 class="section-head__title">Simple, Transparent Plans</h2>
+        <p class="section-head__desc">
+          Choose the plan that fits your stage. Scale up whenever you need more.
+        </p>
+      </div>
+      <div class="pricing__grid">
+        <!-- Starter -->
+        <article class="pricing-card">
+          <h3 class="pricing-card__plan">Starter</h3>
+          <p class="pricing-card__price"><span class="pricing-card__currency">$</span>499<span class="pricing-card__period">/project</span></p>
+          <ul class="pricing-card__features">
+            <li>Landing page or small site</li>
+            <li>Up to 5 pages</li>
+            <li>Responsive design</li>
+            <li>Basic SEO setup</li>
+            <li>2-week delivery</li>
+          </ul>
+          <a href="contact.html" class="btn btn--outline btn--full">Choose Starter</a>
+        </article>
+
+        <!-- Professional (featured) -->
+        <article class="pricing-card pricing-card--featured">
+          <span class="pricing-card__badge">Most Popular</span>
+          <h3 class="pricing-card__plan">Professional</h3>
+          <p class="pricing-card__price"><span class="pricing-card__currency">$</span>1,999<span class="pricing-card__period">/project</span></p>
+          <ul class="pricing-card__features">
+            <li>Full web application</li>
+            <li>Up to 15 pages + dashboard</li>
+            <li>Custom UI/UX design</li>
+            <li>API integration</li>
+            <li>30-day support</li>
+          </ul>
+          <a href="contact.html" class="btn btn--primary btn--full">Choose Professional</a>
+        </article>
+
+        <!-- Enterprise -->
+        <article class="pricing-card">
+          <h3 class="pricing-card__plan">Enterprise</h3>
+          <p class="pricing-card__price"><span class="pricing-card__currency">$</span>Custom</p>
+          <ul class="pricing-card__features">
+            <li>Advanced web + mobile + AI</li>
+            <li>Dedicated project team</li>
+            <li>Security &amp; compliance</li>
+            <li>Cloud architecture</li>
+            <li>Ongoing support &amp; SLA</li>
+          </ul>
+          <a href="contact.html" class="btn btn--outline btn--full">Contact Us</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- FAQ SECTION                                           -->
+  <!-- ===================================================== -->
+  <section class="faq section-pad" id="faq">
+    <div class="container faq__inner">
+      <div class="section-head">
+        <span class="section-head__tag">Need Help?</span>
+        <h2 class="section-head__title">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq__list" id="faq-list">
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            How long does a typical project take?
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>
+              A standard website takes 2–4 weeks, while a full web or mobile
+              application usually takes 6–12 weeks depending on scope. We give you a
+              clear timeline after our discovery call.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            Do you provide support after launch?
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>
+              Yes. Every project includes a support period, and we also offer
+              ongoing maintenance plans to keep your product secure and up to date.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            Can you work with our existing team?
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>
+              Absolutely. We frequently embed with in-house teams, work in your
+              repositories and follow your processes and tooling.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            How do you handle payment and billing?
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>
+              We work on milestone-based payments. You only pay as each phase is
+              approved, which keeps everything transparent and low-risk for you.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            Do you sign non-disclosure agreements?
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>
+              Yes, we are happy to sign NDAs before any discussion of your project
+              details or confidential information.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- NEWSLETTER SECTION                                    -->
+  <!-- ===================================================== -->
+  <section class="newsletter section-pad" id="newsletter">
+    <div class="container">
+      <div class="newsletter__box">
+        <h2 class="newsletter__title">Stay In The Loop</h2>
+        <p class="newsletter__desc">
+          Subscribe to our newsletter for the latest in development, AI and tech news.
+        </p>
+        <form class="newsletter__form" id="newsletter-form" novalidate>
+          <input
+            type="email"
+            class="newsletter__input"
+            id="newsletter-email"
+            placeholder="Enter your email address"
+            aria-label="Email address"
+          >
+          <button type="submit" class="btn btn--primary">Subscribe</button>
+        </form>
+        <p class="newsletter__message" id="newsletter-message" aria-live="polite" hidden></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- FOOTER                                                -->
+  <!-- ===================================================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Brand column -->
+        <div class="footer__col footer__col--brand">
+          <a href="index.html" class="navbar__logo footer__logo">
+            <span class="navbar__logo-icon" aria-hidden="true">N</span>
+            <span class="navbar__logo-text">NOVA<span>TECH</span></span>
+          </a>
+          <p class="footer__about">
+            NOVA TECH is a full-service technology company delivering web, mobile,
+            AI, security and cloud solutions to clients worldwide.
+          </p>
+          <div class="footer__social" aria-label="Social media links">
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="footer__social-link" aria-label="Twitter">t</a>
+            <a href="#" class="footer__social-link" aria-label="GitHub">gh</a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">ig</a>
+          </div>
+        </div>
+
+        <!-- Company links -->
+        <div class="footer__col">
+          <h4 class="footer__title">Company</h4>
+          <ul class="footer__links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services links -->
+        <div class="footer__col">
+          <h4 class="footer__title">Services</h4>
+          <ul class="footer__links">
+            <li><a href="services.html">Web Development</a></li>
+            <li><a href="services.html">Mobile Apps</a></li>
+            <li><a href="services.html">AI Solutions</a></li>
+            <li><a href="services.html">Cyber Security</a></li>
+            <li><a href="services.html">Cloud Solutions</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact links -->
+        <div class="footer__col">
+          <h4 class="footer__title">Contact</h4>
+          <ul class="footer__links footer__links--contact">
+            <li><span>123 Innovation Drive, Tech City, TC 12345</span></li>
+            <li><a href="tel:+15551234567">+1 (555) 123-4567</a></li>
+            <li><a href="mailto:hello@novatech.com">hello@novatech.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span id="footer-year"></span> NOVA TECH. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================== -->
+  <!-- SCRIPTS                                               -->
+  <!-- ===================================================== -->
+  <script src="js/main.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/team.js"></script>
+</body>
+</html>
