@@ -1,32 +1,4 @@
-/* ==========================================================================
-   auth.js
-   Client-side demo authentication for the NOVA TECH site.
 
-   Everything is stored in localStorage only — nothing is sent to a server.
-
-   Features:
-   - Predefined demo user accounts
-   - Login form validation + credential check
-   - "Remember me" (saves the email for next time)
-   - Show/hide password toggle
-   - Session stored in localStorage
-   - Logout (clears the session)
-   - Navbar Login button switches to a "Dashboard" link while logged in
-
-   Exposes a small API on `window.auth`:
-     - window.auth.getUser()   -> session object or null
-     - window.auth.isLoggedIn() -> true/false
-     - window.auth.logout()     -> clears session (+ redirects if on dashboard)
-
-   Demonstrates: const, let, arrays, objects, functions, parameters,
-   return, if/else, for...of, array methods (find, trim, toLowerCase),
-   template literals, DOM manipulation, form + change events, classList,
-   localStorage + JSON, Date, try/catch.
-   ========================================================================== */
-
-// --------------------------------------------------------------------------
-// 1. DEMO USER DATABASE (hardcoded for the demo)
-// --------------------------------------------------------------------------
 const demoUsers = [
   {
     name: 'Admin',
@@ -42,7 +14,7 @@ const demoUsers = [
   },
 ];
 
-// Where we store session data in localStorage
+// Where we store session data in sessionStorage
 const SESSION_KEY = 'novatech_session';
 const REMEMBER_KEY = 'novatech_remembered_email';
 
@@ -52,7 +24,7 @@ const REMEMBER_KEY = 'novatech_remembered_email';
 // Reads the current session, or returns null if absent / corrupted
 function getCurrentUser() {
   try {
-    const raw = localStorage.getItem(SESSION_KEY);
+    const raw = sessionStorage.getItem(SESSION_KEY);
     if (!raw) return null;
 
     const session = JSON.parse(raw);
@@ -69,7 +41,7 @@ function isLoggedIn() {
 
 // Clears the session. On the dashboard, redirect back to the login page.
 function logout(shouldRedirect) {
-  localStorage.removeItem(SESSION_KEY);
+  sessionStorage.removeItem(SESSION_KEY);
 
   if (shouldRedirect) {
     window.location.href = 'login.html';
@@ -85,11 +57,6 @@ window.auth = {
   },
 };
 
-// --------------------------------------------------------------------------
-// 3. NAVBAR "LOGIN" BUTTON
-//    If a user is already logged in, turn the button into a Dashboard link.
-//    Runs on every page that includes the shared navbar.
-// --------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
   updateNavbarButton();
 });
@@ -112,10 +79,6 @@ function updateNavbarButton() {
     loginButton.classList.add('btn--ghost');
   }
 }
-
-// --------------------------------------------------------------------------
-// 4. LOGIN FORM (only exists on login.html)
-// --------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
   initLoginForm();
 });
@@ -130,8 +93,8 @@ function initLoginForm() {
   const showPasswordCheck = document.getElementById('show-password');
   const alertBox = document.getElementById('auth-alert');
 
-  // a) Prefill the email if "remember me" was used before
-  const rememberedEmail = localStorage.getItem(REMEMBER_KEY);
+  // a) Prefill the email if "remember me" was used for this browser session
+  const rememberedEmail = sessionStorage.getItem(REMEMBER_KEY);
   if (rememberedEmail) {
     emailInput.value = rememberedEmail;
     rememberCheck.checked = true;
@@ -188,18 +151,18 @@ function initLoginForm() {
       loginAt: new Date().toISOString(), // Date object + ISO string
     };
 
-    // Persist the session (wrapped in try/catch)
+    // Persist the session for the current browser session only (wrapped in try/catch)
     try {
-      localStorage.setItem(SESSION_KEY, JSON.stringify(session));
+      sessionStorage.setItem(SESSION_KEY, JSON.stringify(session));
     } catch (error) {
       console.error('Could not save the session:', error);
     }
 
-    // Remember the email if the checkbox is checked, otherwise forget it
+    // Remember the email for this browser session if the checkbox is checked, otherwise forget it
     if (rememberCheck.checked) {
-      localStorage.setItem(REMEMBER_KEY, email);
+      sessionStorage.setItem(REMEMBER_KEY, email);
     } else {
-      localStorage.removeItem(REMEMBER_KEY);
+      sessionStorage.removeItem(REMEMBER_KEY);
     }
 
     // Redirect to the dashboard
