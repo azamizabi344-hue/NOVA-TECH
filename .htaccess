@@ -1,0 +1,33 @@
+# NOVA TECH - Apache URL Rewriting
+# This file handles clean URLs and security headers
+
+# Enable URL rewriting engine
+RewriteEngine On
+
+# Redirect all requests to existing files/directories, or index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Protect sensitive files from being accessed directly
+<FilesMatch "^(config|database)\.(php|sql)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent directory listing
+Options -Indexes
+
+# Set security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Protect uploads directory from PHP execution
+<Directory "uploads">
+    <FilesMatch "\.php$">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+</Directory>
