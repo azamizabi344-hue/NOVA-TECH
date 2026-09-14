@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Browse NOVA TECH projects across web, mobile, AI and cyber security.">
-  <title>Projects | NOVA TECH</title>
+  <meta name="description" content="Meet the NOVA TECH team - engineers, designers, security and AI specialists.">
+  <title>Our Team | NOVA TECH</title>
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
 
@@ -25,8 +25,8 @@
           <li><a href="index.html" class="navbar__link">Home</a></li>
           <li><a href="about.html" class="navbar__link">About</a></li>
           <li><a href="services.html" class="navbar__link">Services</a></li>
-          <li><a href="projects.html" class="navbar__link active">Projects</a></li>
-          <li><a href="team.html" class="navbar__link">Team</a></li>
+          <li><a href="projects.html" class="navbar__link">Projects</a></li>
+          <li><a href="team.html" class="navbar__link active">Team</a></li>
           <li><a href="blog.html" class="navbar__link">Blog</a></li>
           <li><a href="contact.html" class="navbar__link">Contact</a></li>
         </ul>
@@ -46,57 +46,50 @@
   <!--  PAGE HERO  -->
   <section class="page-hero">
     <div class="container">
-      <h1 class="page-hero__title">Our Projects</h1>
+      <h1 class="page-hero__title">Meet The Team</h1>
       <p class="page-hero__desc">
-        Real products we have designed, built and shipped for clients across
-        web, mobile, AI and cyber security.
+        Fifty-plus curious engineers, designers and specialists — these are the
+        people behind every NOVA TECH product.
       </p>
       <div class="breadcrumb">
-        <a href="index.html">Home</a> / <span>Projects</span>
+        <a href="index.html">Home</a> / <span>Team</span>
       </div>
     </div>
   </section>
 
-  <!--  PROJECTS (dynamic)  -->
-  <section class="projects-page section-pad">
+  <!-- TEAM (dynamic)  -->
+  <section class="team-page section-pad">
     <div class="container">
-      <!-- Toolbar: search + sort -->
+      <!-- Toolbar: search -->
       <div class="toolbar">
         <input
           type="text"
           class="toolbar-search"
-          id="project-search"
-          placeholder="Search by name, client or technology..."
-          aria-label="Search projects"
+          id="team-search"
+          placeholder="Search by name, role or skill..."
+          aria-label="Search team members"
         >
-        <div class="toolbar__right">
-          <label class="toolbar__label" for="project-sort">Sort by</label>
-          <select class="sort-select" id="project-sort">
-            <option value="newest">Newest First</option>
-            <option value="oldest">Oldest First</option>
-            <option value="az">Name (A-Z)</option>
-          </select>
-        </div>
       </div>
 
-      <!-- Category filter -->
-      <div class="filter-bar" id="project-filters">
+      <!-- Department filter -->
+      <div class="filter-bar" id="team-filters">
         <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="web">Web</button>
-        <button class="filter-btn" data-filter="mobile">Mobile</button>
-        <button class="filter-btn" data-filter="ai">AI</button>
+        <button class="filter-btn" data-filter="executive">Executive</button>
+        <button class="filter-btn" data-filter="engineering">Engineering</button>
+        <button class="filter-btn" data-filter="design">Design</button>
         <button class="filter-btn" data-filter="security">Security</button>
+        <button class="filter-btn" data-filter="ai">AI</button>
       </div>
 
       <!-- Result count -->
-      <p class="services-count" id="project-count"></p>
+      <p class="services-count" id="team-count"></p>
 
-      <!-- Cards rendered by projects.js -->
-      <div class="projects__grid" id="projects-grid"></div>
+      <!-- Cards rendered by team.js -->
+      <div class="team__grid" id="team-grid"></div>
 
       <!-- Empty state -->
-      <div class="services-empty" id="projects-empty">
-        No projects match your search. Try a different keyword or filter.
+      <div class="services-empty" id="team-empty">
+        No team members match your search. Try a different keyword or department.
       </div>
     </div>
   </section>
@@ -104,13 +97,13 @@
   <!--  CTA STRIP  -->
   <section class="cta-strip">
     <div class="container">
-      <h2>Have A Project In Mind?</h2>
-      <p>Let's make it real. Tell us what you want to build.</p>
-      <a href="contact.html" class="btn btn--outline">Start A Project</a>
+      <h2>Work With This Team</h2>
+      <p>We are always happy to talk about your next project.</p>
+      <a href="contact.html" class="btn btn--outline">Contact Us</a>
     </div>
   </section>
 
-  <!--  FOOTER (shared)  -->
+  <!-- FOOTER (shared)  -->
   <footer class="footer" id="footer">
     <div class="container">
       <div class="footer__grid">
@@ -169,8 +162,8 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
-  <script src="js/navbar.js"></script>
-  <script src="js/projects.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/team.js"></script>
 </body>
 </html>

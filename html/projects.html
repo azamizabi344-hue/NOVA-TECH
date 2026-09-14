@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Insights and articles from the NOVA TECH team on web, mobile, AI, security and cloud.">
-  <title>Blog | NOVA TECH</title>
+  <meta name="description" content="Browse NOVA TECH projects across web, mobile, AI and cyber security.">
+  <title>Projects | NOVA TECH</title>
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
 
@@ -25,9 +25,9 @@
           <li><a href="index.html" class="navbar__link">Home</a></li>
           <li><a href="about.html" class="navbar__link">About</a></li>
           <li><a href="services.html" class="navbar__link">Services</a></li>
-          <li><a href="projects.html" class="navbar__link">Projects</a></li>
+          <li><a href="projects.html" class="navbar__link active">Projects</a></li>
           <li><a href="team.html" class="navbar__link">Team</a></li>
-          <li><a href="blog.html" class="navbar__link active">Blog</a></li>
+          <li><a href="blog.html" class="navbar__link">Blog</a></li>
           <li><a href="contact.html" class="navbar__link">Contact</a></li>
         </ul>
       </nav>
@@ -46,51 +46,57 @@
   <!--  PAGE HERO  -->
   <section class="page-hero">
     <div class="container">
-      <h1 class="page-hero__title">Blog &amp; Insights</h1>
+      <h1 class="page-hero__title">Our Projects</h1>
       <p class="page-hero__desc">
-        Ideas, lessons and behind-the-scenes stories from our engineering,
-        design, AI and security teams.
+        Real products we have designed, built and shipped for clients across
+        web, mobile, AI and cyber security.
       </p>
       <div class="breadcrumb">
-        <a href="index.html">Home</a> / <span>Blog</span>
+        <a href="index.html">Home</a> / <span>Projects</span>
       </div>
     </div>
   </section>
 
-  <!--  BLOG (dynamic)  -->
-  <section class="blog-page section-pad">
+  <!--  PROJECTS (dynamic)  -->
+  <section class="projects-page section-pad">
     <div class="container">
-      <!-- Toolbar: search -->
+      <!-- Toolbar: search + sort -->
       <div class="toolbar">
         <input
           type="text"
           class="toolbar-search"
-          id="blog-search"
-          placeholder="Search articles, topics or authors..."
-          aria-label="Search articles"
+          id="project-search"
+          placeholder="Search by name, client or technology..."
+          aria-label="Search projects"
         >
+        <div class="toolbar__right">
+          <label class="toolbar__label" for="project-sort">Sort by</label>
+          <select class="sort-select" id="project-sort">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="az">Name (A-Z)</option>
+          </select>
+        </div>
       </div>
 
       <!-- Category filter -->
-      <div class="filter-bar" id="blog-filters">
+      <div class="filter-bar" id="project-filters">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="web">Web</button>
         <button class="filter-btn" data-filter="mobile">Mobile</button>
         <button class="filter-btn" data-filter="ai">AI</button>
         <button class="filter-btn" data-filter="security">Security</button>
-        <button class="filter-btn" data-filter="cloud">Cloud</button>
-        <button class="filter-btn" data-filter="company">Company</button>
       </div>
 
       <!-- Result count -->
-      <p class="services-count" id="blog-count"></p>
+      <p class="services-count" id="project-count"></p>
 
-      <!-- Cards rendered by blog.js -->
-      <div class="blog__grid" id="blog-grid"></div>
+      <!-- Cards rendered by projects.js -->
+      <div class="projects__grid" id="projects-grid"></div>
 
       <!-- Empty state -->
-      <div class="services-empty" id="blog-empty">
-        No articles match your search. Try a different keyword or category.
+      <div class="services-empty" id="projects-empty">
+        No projects match your search. Try a different keyword or filter.
       </div>
     </div>
   </section>
@@ -98,9 +104,9 @@
   <!--  CTA STRIP  -->
   <section class="cta-strip">
     <div class="container">
-      <h2>Want To Work With Us?</h2>
-      <p>Explore our open roles or start a conversation.</p>
-      <a href="careers.html" class="btn btn--outline">See Careers</a>
+      <h2>Have A Project In Mind?</h2>
+      <p>Let's make it real. Tell us what you want to build.</p>
+      <a href="contact.html" class="btn btn--outline">Start A Project</a>
     </div>
   </section>
 
@@ -163,8 +169,8 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
-  <script src="js/navbar.js"></script>
-  <script src="js/blog.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/projects.js"></script>
 </body>
 </html>
