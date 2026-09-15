@@ -11,6 +11,16 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/animations.css">
   <link rel="stylesheet" href="../css/responsive.css">
+
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('nova-theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
 
@@ -39,6 +49,10 @@
 
       <!-- Right side actions -->
       <div class="navbar__actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode" aria-pressed="false">
+          <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">&#127769;</span>
+          <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">&#9728;&#65039;</span>
+        </button>
         <a href="login.html" class="btn btn--ghost btn--sm" id="navbar-login">Login</a>
         <button class="navbar__toggle" id="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span class="navbar__toggle-bar"></span>
@@ -641,6 +655,7 @@
   <!-- SCRIPTS                                               -->
   <!-- ===================================================== -->
   <script src="../js/main.js"></script>
+  <script src="../js/theme.js"></script>
   <script src="../js/navbar.js"></script>
   <script src="../js/projects.js"></script>
   <script src="../js/team.js"></script>

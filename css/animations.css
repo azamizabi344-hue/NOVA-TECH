@@ -1,6 +1,6 @@
 /* ==========================================================================
-   NOVA TECH - Animations (animations.css)
-   Keyframes, reveals, transitions and motion effects
+   NOVA TECH - iOS 27-inspired Animations (animations.css)
+   Keyframes, reveals, transitions and subtle motion
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -14,14 +14,14 @@
 /* Floating motion used for tech-visual cards */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
+  50% { transform: translateY(-12px); }
 }
 
 /* Fade-up used for scroll reveals */
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -39,7 +39,7 @@
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(-40px);
+    transform: translateX(-32px);
   }
   to {
     opacity: 1;
@@ -47,25 +47,42 @@
   }
 }
 
-/* Pulsing glow for hero core */
+/* Soft pulsing glow for hero core */
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 40px rgba(108, 92, 231, 0.4); }
-  50% { box-shadow: 0 0 80px rgba(108, 92, 231, 0.7); }
+  0%, 100% { box-shadow: 0 12px 48px rgba(10, 132, 255, 0.3), 0 0 60px rgba(10, 132, 255, 0.12); }
+  50% { box-shadow: 0 12px 56px rgba(10, 132, 255, 0.4), 0 0 100px rgba(10, 132, 255, 0.18); }
+}
+
+/* Floating background orbs - slow and subtle */
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(40px, 30px); }
+  66% { transform: translate(-20px, 50px); }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-50px, -30px); }
+  66% { transform: translate(30px, -40px); }
 }
 
 /* --------------------------------------------------------------------------
    2. HERO ENTRANCE ANIMATIONS
    -------------------------------------------------------------------------- */
-.hero__badge { animation: fadeIn 0.8s ease 0.1s both; }
-.hero__title  { animation: slideInLeft 0.9s ease 0.2s both; }
-.hero__subtitle { animation: slideInLeft 0.9s ease 0.35s both; }
-.hero__buttons { animation: slideInLeft 0.9s ease 0.5s both; }
-.hero__stats { animation: fadeIn 1s ease 0.7s both; }
-.hero__visual { animation: fadeIn 1.2s ease 0.4s both; }
+.hero__badge { animation: fadeIn 0.7s ease 0.1s both; }
+.hero__title  { animation: slideInLeft 0.8s ease 0.15s both; }
+.hero__subtitle { animation: slideInLeft 0.8s ease 0.3s both; }
+.hero__buttons { animation: slideInLeft 0.8s ease 0.45s both; }
+.hero__stats { animation: fadeIn 0.9s ease 0.6s both; }
+.hero__visual { animation: fadeIn 1.1s ease 0.35s both; }
 
 .tech-visual__core {
-  animation: pulseGlow 3s ease-in-out infinite;
+  animation: pulseGlow 4s ease-in-out infinite;
 }
+
+/* Background orbs animation - applied via body pseudo-elements */
+body::before { animation: orbFloat1 30s ease-in-out infinite; }
+body::after { animation: orbFloat2 36s ease-in-out infinite reverse; }
 
 /* --------------------------------------------------------------------------
    3. SCROLL REVEAL
@@ -74,8 +91,8 @@
    -------------------------------------------------------------------------- */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .reveal.revealed {
@@ -89,29 +106,58 @@
 .reveal-delay-3 { transition-delay: 0.3s; }
 
 /* --------------------------------------------------------------------------
-   4. HOVER EFFECTS (transitions)
-   These complement the base transitions defined in style.css.
+   4. MICRO-INTERACTIONS
+   Subtle, iOS-style feedback - never flashy
    -------------------------------------------------------------------------- */
-.btn {
-  position: relative;
-  overflow: hidden;
+.btn:active {
+  transform: scale(0.98);
 }
 
-/* Button shine sweep on hover */
-.btn::after {
+/* Hairline top highlight on glass cards for depth */
+.stat-card,
+.service-card,
+.project-card,
+.team-card,
+.testimonial-card,
+.pricing-card,
+.job-card,
+.blog-card,
+.mission-card,
+.leader-card,
+.value-card,
+.contact-info__card,
+.dash-card,
+.panel-card {
+  position: relative;
+}
+
+.stat-card::before,
+.service-card::before,
+.project-card::before,
+.team-card::before,
+.testimonial-card::before,
+.pricing-card::before,
+.job-card::before,
+.blog-card::before,
+.mission-card::before,
+.leader-card::before,
+.value-card::before,
+.contact-info__card::before,
+.dash-card::before,
+.panel-card::before {
   content: "";
   position: absolute;
   top: 0;
-  left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-  transform: skewX(-20deg);
-  transition: left 0.5s ease;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.06), transparent);
+  pointer-events: none;
 }
 
-.btn:hover::after {
-  left: 120%;
+/* Gentle floating for decorative cards */
+.float-slow {
+  animation: float 6s ease-in-out infinite;
 }
 
 /* --------------------------------------------------------------------------
@@ -138,5 +184,10 @@
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  body::before,
+  body::after {
+    animation: none;
   }
 }

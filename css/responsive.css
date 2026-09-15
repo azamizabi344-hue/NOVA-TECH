@@ -1,6 +1,6 @@
 /* ==========================================================================
    NOVA TECH - Responsive Styles (responsive.css)
-   Tablet and mobile breakpoints
+   iOS 27 - Tablet and mobile breakpoints
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -9,6 +9,16 @@
 @media (max-width: 1024px) {
   :root {
     --size-3xl: 2.4rem;
+  }
+
+  body::before {
+    width: 480px;
+    height: 480px;
+  }
+
+  body::after {
+    width: 420px;
+    height: 420px;
   }
 
   .hero__inner {
@@ -36,10 +46,6 @@
   .projects__grid,
   .team__grid,
   .pricing__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .stats__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -121,32 +127,36 @@
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   .section-pad {
-    padding: 60px 0;
+    padding: 70px 0;
   }
 
   .section-head__title {
     font-size: var(--size-2xl);
   }
 
-  /* Navbar becomes a hamburger menu */
+  /* Navbar becomes a hamburger menu - floating glass sheet below pill */
   .navbar__menu {
     position: fixed;
-    top: 74px;
-    left: 0;
-    right: 0;
-    background: var(--color-bg-2);
-    border-bottom: 1px solid var(--color-border);
+    top: 88px;
+    left: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(32px) saturate(200%);
+    -webkit-backdrop-filter: blur(32px) saturate(200%);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius-md);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.16);
     flex-direction: column;
     align-items: stretch;
-    padding: 0 24px;
+    padding: 0 16px;
     max-height: 0;
     overflow: hidden;
-    transition: var(--transition);
+    transition: max-height 0.4s ease, padding 0.4s ease;
   }
 
   .navbar__menu.open {
     max-height: 460px;
-    padding: 20px 24px;
+    padding: 20px 16px;
   }
 
   .navbar__list {
@@ -157,8 +167,9 @@
 
   .navbar__link {
     display: block;
-    padding: 14px 12px;
+    padding: 14px 14px;
     text-align: left;
+    font-size: var(--size-base);
   }
 
   .navbar__toggle {
@@ -226,9 +237,10 @@
     flex-wrap: wrap;
     gap: 8px;
     border-right: none;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--glass-border);
     padding: 12px 16px;
     overflow-x: auto;
+    background: rgba(255, 255, 255, 0.85);
   }
 
   .sidebar__brand,
@@ -245,6 +257,7 @@
   .sidebar__link {
     white-space: nowrap;
     margin-bottom: 0;
+    border-radius: var(--radius-full);
   }
 
   .sidebar__link--logout {
@@ -307,6 +320,17 @@
     flex-direction: column;
     text-align: center;
   }
+
+  /* Dark mode - mobile menu sheet + sidebar */
+  html[data-theme="dark"] .navbar__menu {
+    background: rgba(28, 28, 30, 0.68);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+  }
+
+  html[data-theme="dark"] .dashboard__sidebar {
+    background: rgba(18, 18, 20, 0.7);
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -315,6 +339,16 @@
 @media (max-width: 480px) {
   .container {
     padding: 0 16px;
+  }
+
+  body::before {
+    width: 340px;
+    height: 340px;
+  }
+
+  body::after {
+    width: 300px;
+    height: 300px;
   }
 
   .stats__grid {
@@ -326,7 +360,7 @@
   }
 
   .newsletter__box {
-    padding: 32px 20px;
+    padding: 36px 24px;
   }
 
   .newsletter__form {
@@ -352,7 +386,7 @@
   }
 
   .modal__box {
-    padding: 28px 20px;
+    padding: 32px 22px;
   }
 
   .values-grid {
